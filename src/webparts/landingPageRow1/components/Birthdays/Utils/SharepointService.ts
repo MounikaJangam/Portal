@@ -73,25 +73,24 @@ export class SharePointService {
     const months = this.GenerateCurrentMonths();
     console.log(months);
     for (let i = 0; i < months.length; i++) {
-     
-
       // const month = months[i];
-
       months[i].users = sortBy(
         items   // eslint-disable-next-line
-        .filter((item: any) => item.Date === months[i].date)
-          
+        .filter((item: any) =>
+        {  let usrBdayString = item.BirthdayDate.split('T');
+          let d:any=new Date(usrBdayString);
+          let date = d.getDate()
+           return (date === months[i].date)
+        })
           .map(
             // eslint-disable-next-line
             (item: any): any => ({
-
               id: item.ID,
               name: item.Employee.Title,
               email: item.Employee.UserName,
               date: item.BirthdayDate,
               month: item.Month,
               monthIndex: this.GetMonthIndex(item.Month)
-
             })
           ),
         "Date"

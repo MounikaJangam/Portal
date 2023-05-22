@@ -7123,11 +7123,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-// import { truncate } from '@microsoft/sp-lodash-subset'
 
-// import PollForm from './PollForm';
 var PollElement = function (props) {
-    // var isUserVoted:boolean;
     var rowId = props.data.ID;
     var q = props.data.QuestionName;
     var c = props.data.Choices;
@@ -7136,23 +7133,7 @@ var PollElement = function (props) {
     console.log(choicearr);
     var _a = react__WEBPACK_IMPORTED_MODULE_0__["useState"](true), isLoading = _a[0], setLoading = _a[1];
     var _b = react__WEBPACK_IMPORTED_MODULE_0__["useState"](true), userVoted = _b[0], setUservoted = _b[1];
-    //const [choice, setChoice] =React.useState<any[]>([])
     var userarrr = [];
-    //const [question,setQuestion] = React.useState<string>("")
-    //     props.data&&props.data?.map((x:any)=>{
-    //         //  ch=x.Choices;
-    //           qn = x.QuestionName
-    //         // console.log(ch);
-    //         // console.log(qn);
-    //         // setQuestion(qn)
-    //         console.log(qn);
-    // })
-    // const resData = [
-    //     { id: 0, text: 'Answer 1', votes: 0},
-    //     { id: 1, text: '', votes: 7 },
-    //     { id: 2, text: 'Answer 3', votes: 0 }
-    //   ]
-    //   resData[1]=( { id: 0, text: '', votes: 0 })
     // Object keys may vary on the poll type (see the 'Theme options' table below)
     var customTheme = {
         textColor: 'black',
@@ -7180,12 +7161,8 @@ var PollElement = function (props) {
                     console.log(user.Email);
                     console.log(userarrr.includes(user.Email));
                     cond = (userarrr.includes(user.Email) && userarrr.includes(qid));
-                    //  isUserVoted = userarrr.includes(user.Email)?true:false
                     setUservoted(cond);
                     setLoading(false);
-                    //  console.log(isUserVoted);
-                    //userarrr.includes(user.Email)?setUservoted(true):setUservoted(false);
-                    //console.log(userVoted);
                     return [2 /*return*/, user.Email];
             }
         });
@@ -7227,62 +7204,14 @@ var PollElement = function (props) {
         console.log(results);
         console.log(item);
         updateVotes(item, results);
-        // Here you probably want to manage
-        // and return the modified data to the server.
     }
-    //   React.useEffect(()=>{
-    //         setQuestion(qn)
-    //   },qn)
-    //   console.log(question);
-    //   React.useEffect(()=>{
-    //         props.data&&props.data?.map((x:any)=>{
-    //             let q = x.QuestionName
-    //             let c = x.Choices;
-    //             let choicearr= JSON.parse(c)
-    //             console.log(choicearr)
-    //             setChoice(choicearr)
-    //             setQuestion(q)
-    //         })
-    //   },props.data)
-    //   console.log(choice);
-    //   console.log(resData);
     react__WEBPACK_IMPORTED_MODULE_0__["useEffect"](function () {
         checkUser();
     }, []);
-    //   React.useEffect(()=>{
-    //     //  isUs erVoted = userarrr.includes(user.Email)?true:false
-    // let cond = userarrr.includes(props.uEmail)
-    // setUservoted(cond)
-    //   },[userarrr])
     if (isLoading) {
         return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, "Loading...");
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_leaf_polls__WEBPACK_IMPORTED_MODULE_1__["LeafPoll"], { type: 'multiple', question: q, results: choicearr, theme: customTheme, onVote: vote, isVoted: userVoted })
-    //  props.data&&
-    //   props.data?.map((x:any)=>{
-    ///          let q = x.QuestionName
-    //       let c = x.Choices;
-    //     let choicearr= JSON.parse(c)
-    //   console.log(choicearr)
-    // console.log(userVoted);
-    // setChoice(choicearr)
-    // setQuestion(q)
-    //   return(
-    //       <>
-    //       <LeafPoll
-    //   type='multiple'
-    //   question={q}
-    //   results={choicearr}
-    //   theme={customTheme}
-    //   onVote={vote}
-    //   isVoted={userVoted}
-    // />
-    //{/* <PollForm/> */}
-    //  </>
-    //       ) 
-    //    })}
-    //  </>
-    );
+    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_leaf_polls__WEBPACK_IMPORTED_MODULE_1__["LeafPoll"], { type: 'multiple', question: q, results: choicearr, theme: customTheme, onVote: vote, isVoted: userVoted }));
 };
 /* harmony default export */ __webpack_exports__["default"] = (PollElement);
 
@@ -9801,7 +9730,6 @@ var PollForm = function (props) {
                     list = _a.sent();
                     console.log(list);
                     list.map(function (x) {
-                        // console.log(x.QuestionId);
                         idnext = parseInt(x.QuestionId) + 1;
                         setNextId(idnext);
                     });
@@ -26249,10 +26177,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PollElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PollElement */ "4Bth");
 /* harmony import */ var _pnpConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pnpConfig */ "k0qc");
 /* harmony import */ var _pnp_sp_site_users_web__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @pnp/sp/site-users/web */ "EjWy");
-/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/ai */ "33Fu");
-/* harmony import */ var _PollForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PollForm */ "7DEL");
-/* harmony import */ var _Poll_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Poll.scss */ "TIYm");
-/* harmony import */ var _pnp_sp_security__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @pnp/sp/security */ "ah5w");
+/* harmony import */ var _PollForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PollForm */ "7DEL");
+/* harmony import */ var _Poll_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Poll.scss */ "TIYm");
+/* harmony import */ var _pnp_sp_security__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @pnp/sp/security */ "ah5w");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -26293,26 +26220,21 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+//import { AiFillPlusCircle } from "react-icons/ai";
 
 
 
-
-// import PollForm from './PollForm';
 var OpinionPoll = function (props) {
     var _a = react__WEBPACK_IMPORTED_MODULE_0__["useState"]([]), pollData = _a[0], setPolldata = _a[1];
     var _b = react__WEBPACK_IMPORTED_MODULE_0__["useState"](true), formmode = _b[0], setFormmode = _b[1];
-    var _c = react__WEBPACK_IMPORTED_MODULE_0__["useState"](false), createformmode = _c[0], setCreateformmode = _c[1];
-    var _d = react__WEBPACK_IMPORTED_MODULE_0__["useState"](false), canCreate = _d[0], setcanCreate = _d[1];
-    // const[userem,setuserem] = React.useState<any>()
+    // const[createformmode,setCreateformmode] = React.useState<boolean>(false);
+    // const[canCreate, setcanCreate] = React.useState<boolean>(false)
+    var createformmode = react__WEBPACK_IMPORTED_MODULE_0__["useState"](false)[0];
+    var _c = react__WEBPACK_IMPORTED_MODULE_0__["useState"](false), setcanCreate = _c[1];
     var arr;
-    // const caml: ICamlQuery = {
-    //   ViewXml:
-    //     "<View><ViewFields><FieldRef Name='ID' /><FieldRef Name='QuestionId' /><FieldRef Name='QuestionName' /><FieldRef Name='Choices' /></ViewFields></View>",
-    // };
     var caml = {
         ViewXml: "<View><Query><FieldRef Name='ID' /><FieldRef Name='QuestionId' /><FieldRef Name='QuestionName' /><FieldRef Name='Choices' /><Where><Eq><FieldRef Name='Active'/><Value Type='Boolean'>1</Value></Eq></Where></Query></View>",
     };
-    //<RowLimit>3</RowLimit>
     var checkPrem = function () { return __awaiter(void 0, void 0, void 0, function () {
         var _sp, prems;
         return __generator(this, function (_a) {
@@ -26322,7 +26244,7 @@ var OpinionPoll = function (props) {
                     return [4 /*yield*/, _sp.web.lists.getByTitle("OpinionPole").getCurrentUserEffectivePermissions()];
                 case 1:
                     prems = _a.sent();
-                    if (_sp.web.hasPermissions(prems, _pnp_sp_security__WEBPACK_IMPORTED_MODULE_7__["PermissionKind"].AddListItems) && _sp.web.hasPermissions(prems, _pnp_sp_security__WEBPACK_IMPORTED_MODULE_7__["PermissionKind"].EditListItems)) {
+                    if (_sp.web.hasPermissions(prems, _pnp_sp_security__WEBPACK_IMPORTED_MODULE_6__["PermissionKind"].AddListItems) && _sp.web.hasPermissions(prems, _pnp_sp_security__WEBPACK_IMPORTED_MODULE_6__["PermissionKind"].EditListItems)) {
                         console.log("can create new form");
                         setcanCreate(true);
                     }
@@ -26349,10 +26271,7 @@ var OpinionPoll = function (props) {
                     return [4 /*yield*/, r];
                 case 3:
                     arr = _a.sent();
-                    //  let user = await _sp.web.currentUser();
-                    // //  let em = user.Email
                     console.log(r);
-                    //  setuserem(em)
                     setPolldata(arr);
                     if (arr.length > 0) {
                         setFormmode(false);
@@ -26365,17 +26284,12 @@ var OpinionPoll = function (props) {
         getData();
         checkPrem();
     }, []);
-    // React.useEffect(()=>{
-    //   getData();
-    // },pollData)
     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null,
         react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'rowMain3' },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'row31' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h2", null, "Opinion Poll")),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'row32' },
-                canCreate &&
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_icons_ai__WEBPACK_IMPORTED_MODULE_4__["AiFillPlusCircle"], { className: createformmode ? "formBtnOpened" : "formBtn", onClick: function () { return setCreateformmode(!createformmode); }, size: 40 }),
-                createformmode && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_PollForm__WEBPACK_IMPORTED_MODULE_5__["default"], { context: props.context }),
+                createformmode && react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_PollForm__WEBPACK_IMPORTED_MODULE_4__["default"], { context: props.context }),
                 console.log(formmode),
                 pollData && (pollData === null || pollData === void 0 ? void 0 : pollData.map(function (x) {
                     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_PollElement__WEBPACK_IMPORTED_MODULE_1__["default"], { data: x, context: props.context }));

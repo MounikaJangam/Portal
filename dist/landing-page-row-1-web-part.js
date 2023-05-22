@@ -22251,7 +22251,12 @@ var SharePointService = /** @class */ (function () {
         var _loop_1 = function (i) {
             // const month = months[i];
             months[i].users = Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["sortBy"])(items // eslint-disable-next-line
-                .filter(function (item) { return item.Date === months[i].date; })
+                .filter(function (item) {
+                var usrBdayString = item.BirthdayDate.split('T');
+                var d = new Date(usrBdayString);
+                var date = d.getDate();
+                return (date === months[i].date);
+            })
                 .map(
             // eslint-disable-next-line
             function (item) { return ({
@@ -32155,7 +32160,7 @@ function _onKeyDown(ev) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, "*{margin:0;padding:0;box-sizing:border-box}.carousel-indicators{font-size:20px}.Containers{min-width:100%!important;padding:0;height:265px;color:#000;font-size:12px;-ms-flex-pack:center;justify-content:center;display:grid;grid-template-columns:33% 34% 33%;text-align:center}.birthday{margin-left:20px;-ms-flex-line-pack:center;align-content:center}.rowMain{box-shadow:4px 4px 1px 0 rgba(0,0,0,.2);transition:.3s;width:99%;height:265px;overflow:hidden;background-color:#f0f8ff;margin:4px;border:1px solid #f0f8ff;border-radius:20px}.row1{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:flex-start}.row2{background-color:#345978;position:relative;z-index:9999;height:29px;top:0;color:#fff}.row3{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:flex-start}.carousel-item:not(.active){display:none}.row4{background-image:url(https://i.pinimg.com/originals/38/11/6a/38116ace464a15fad0ab919834538eba.gif)}.row4,.row4NoBday{width:99%;height:265px}.row5{font:1em sans-serif;text-align:justify;width:342px;padding:2px 18px}ul.bullets{list-style-type:square;font-size:16px}.marqueetag{width:400px;height:333px;padding:25px;margin:-12px -2px}", ""]);
+exports.push([module.i, "*{margin:0;padding:0;box-sizing:border-box}.carousel-indicators{font-size:20px}.Containers{min-width:100%!important;padding:0;height:265px;color:#000;font-size:12px;-ms-flex-pack:center;justify-content:center;display:grid;grid-template-columns:33% 34% 33%;text-align:center}.Containers span{display:none;word-spacing:10px;text-decoration:none}.birthday{margin-left:20px;-ms-flex-line-pack:center;align-content:center}.rowMain{box-shadow:0 0 10px rgba(0,0,0,.6);-webkit-box-shadow:0 0 10px rgba(0,0,0,.6);transition:.3s;width:98.7%;height:265px;overflow:hidden;background-color:#f0f8ff;margin:4px;border:1px solid #f0f8ff;border-radius:20px}.row1{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:flex-start}.row2{background-color:#345978;position:relative;z-index:9999;height:29px;top:0;color:#fff}.row3{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:flex-start}.carousel-item:not(.active){display:none}.row4{background-image:url(https://i.pinimg.com/originals/38/11/6a/38116ace464a15fad0ab919834538eba.gif)}.row4,.row4NoBday{width:99%;height:265px}.row5{font:1em sans-serif;text-align:justify;width:342px;padding:2px 18px}ul.bullets{list-style-type:square;font-size:16px}.marqueetag{width:400px;height:333px;padding:25px;margin:-12px -2px}", ""]);
 
 
 /***/ }),

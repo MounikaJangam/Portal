@@ -8,6 +8,11 @@
 }
 
 .Containers {
+  span{
+    display: none;
+   word-spacing:10px;
+   text-decoration: none;
+ }
   min-width: 100% !important;
   padding: 0px;
   height: 265px;
@@ -25,9 +30,10 @@
 }
 
 .rowMain {
-  box-shadow: 4px 4px 1px 0px rgba(0,0,0,.2);
+  box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
   transition: 0.3s;
-  width: 99%;
+  width: 98.7%;
   height: 265px;
   overflow: hidden;
   background-color: #F0F8FF;

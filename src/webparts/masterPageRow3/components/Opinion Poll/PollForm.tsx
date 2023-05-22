@@ -34,12 +34,9 @@ const PollForm = (props: any) => {
     console.log(list);
 
     list.map((x: any) => {
-      // console.log(x.QuestionId);
       idnext = parseInt(x.QuestionId) + 1;
       setNextId(idnext)
-
     })
-
   }
 
   const submitObj = async () => {
@@ -51,7 +48,6 @@ const PollForm = (props: any) => {
       QuestionId: Nextid
     });
     console.log(iar);
-
   }
 
 
@@ -64,8 +60,6 @@ const PollForm = (props: any) => {
 
   React.useEffect(() => {
     getLatestID()
-
-
   }, [])
   console.log(Nextid);
 

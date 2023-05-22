@@ -38,7 +38,7 @@
     "scriptResources": {
       "landing-page-row-1-web-part": {
         "type": "path",
-        "path": "landing-page-row-1-web-part.js"
+        "path": "landing-page-row-1-web-part_8bbe7af5fc9f379dc59f.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
@@ -47,7 +47,7 @@
       },
       "LandingPageRow1WebPartStrings": {
         "type": "path",
-        "path": "LandingPageRow1WebPartStrings_en-us.js"
+        "path": "LandingPageRow1WebPartStrings_en-us_e8a849b581bbcb862b8824f17050cd4f.js"
       },
       "@microsoft/sp-lodash-subset": {
         "type": "component",
