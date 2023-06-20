@@ -8,14 +8,13 @@ import { getSP } from "../pnpConfig";
 import { ILandingPageRow1Props } from "./ILandingPageRow1Props";
 import News from "../News/News";
 import { Birthday } from "../Birthdays";
-
 import { SharePointService } from "../Birthdays/Utils/SharepointService";
 import { BirthdaysMonth } from "../Birthdays/models/BirthdayMonths";
 import Announcements from "../Announcements/Announcements";
+
 const LandingPageRow1 = (props: ILandingPageRow1Props) => {
   const [announcementsdata, setAnnouncementsData] = React.useState<any>();
   const [newsdata, setNewsData] = React.useState<any>();
-
   const [birthdaydata, setBirthdayData] = React.useState<any>();
   const caml: ICamlQuery = {
     ViewXml:
@@ -26,7 +25,6 @@ const LandingPageRow1 = (props: ILandingPageRow1Props) => {
     const list = await _sp.web.lists.getByTitle("Announcements");
     var r = await list.getItemsByCAMLQuery(caml);
     setAnnouncementsData(r);
-    console.log(announcementsdata);
   };
 
   const getNewsData = async () => {
@@ -34,7 +32,6 @@ const LandingPageRow1 = (props: ILandingPageRow1Props) => {
     const list1 = await _sp.web.lists.getByTitle("News");
     var r2 = await list1.getItemsByCAMLQuery(caml);
     setNewsData(r2);
-    console.log(newsdata);
   };
 
   const getBirthdayData = async () => {
@@ -71,4 +68,6 @@ const LandingPageRow1 = (props: ILandingPageRow1Props) => {
     </div>
   );
 };
+
+
 export default LandingPageRow1;

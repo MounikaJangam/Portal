@@ -1,4 +1,3 @@
-import { Version } from '@microsoft/sp-core-library';
 import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -13,7 +12,6 @@ export default class LandingPageRow1WebPart extends BaseClientSideWebPart<ILandi
     private _getEnvironmentMessage;
     protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void;
     protected onDispose(): void;
-    protected get dataVersion(): Version;
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;
 }
 //# sourceMappingURL=LandingPageRow1WebPart.d.ts.map

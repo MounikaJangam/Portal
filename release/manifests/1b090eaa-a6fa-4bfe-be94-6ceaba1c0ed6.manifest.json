@@ -38,7 +38,7 @@
     "scriptResources": {
       "landing-page-row-1-web-part": {
         "type": "path",
-        "path": "landing-page-row-1-web-part_8bbe7af5fc9f379dc59f.js"
+        "path": "landing-page-row-1-web-part.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
@@ -47,16 +47,11 @@
       },
       "LandingPageRow1WebPartStrings": {
         "type": "path",
-        "path": "LandingPageRow1WebPartStrings_en-us_e8a849b581bbcb862b8824f17050cd4f.js"
+        "path": "LandingPageRow1WebPartStrings_en-us.js"
       },
       "@microsoft/sp-lodash-subset": {
         "type": "component",
         "id": "73e1dc6c-8441-42cc-ad47-4bd3659f8a3a",
-        "version": "1.16.1"
-      },
-      "@microsoft/sp-core-library": {
-        "type": "component",
-        "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b",
         "version": "1.16.1"
       },
       "@microsoft/sp-webpart-base": {

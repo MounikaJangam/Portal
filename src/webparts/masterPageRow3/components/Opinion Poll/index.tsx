@@ -5,16 +5,13 @@ import { getSP } from '../../pnpConfig';
 import { ICamlQuery } from '@pnp/sp/lists';
 import { IPollProps } from './IPollProps';
 import "@pnp/sp/site-users/web";
-//import { AiFillPlusCircle } from "react-icons/ai";
 import PollForm from './PollForm';
 import './Poll.scss'
 import { PermissionKind } from "@pnp/sp/security";
 
-const OpinionPoll = (props: IPollProps) => {
+const Opinionpoll = (props: IPollProps) => {
   const [pollData, setPolldata] = React.useState<any>([])
-  const [formmode, setFormmode] = React.useState<boolean>(true)
-  // const[createformmode,setCreateformmode] = React.useState<boolean>(false);
-  // const[canCreate, setcanCreate] = React.useState<boolean>(false)
+  const [, setFormmode] = React.useState<boolean>(true)
   const [createformmode] = React.useState<boolean>(false);
   const [, setcanCreate] = React.useState<boolean>(false)
   let arr: any[]
@@ -29,11 +26,9 @@ const OpinionPoll = (props: IPollProps) => {
     const prems = await _sp.web.lists.getByTitle("OpinionPole").getCurrentUserEffectivePermissions()
 
     if (_sp.web.hasPermissions(prems, PermissionKind.AddListItems) && _sp.web.hasPermissions(prems, PermissionKind.EditListItems)) {
-      console.log("can create new form");
       setcanCreate(true)
     }
     else {
-      console.log("cannot create new form");
       setcanCreate(false)
     }
 
@@ -44,7 +39,7 @@ const OpinionPoll = (props: IPollProps) => {
     const r = await list.getItemsByCAMLQuery(caml);
 
     arr = await r;
-    console.log(r);
+   
 
     setPolldata(arr)
     if (arr.length > 0) { setFormmode(false) }
@@ -70,17 +65,21 @@ const OpinionPoll = (props: IPollProps) => {
      <AiFillPlusCircle className={createformmode?"formBtnOpened":"formBtn"} onClick={()=>setCreateformmode(!createformmode)} size={40}/>
    } */}
           {createformmode && <PollForm context={props.context} />}
-          {console.log(formmode)}
+          
           {
             pollData && pollData?.map((x: any) => {
+              
+                
               return (
+                
                 <PollElement data={x} context={props.context} />
+
               )
             })
           }
 
           {
-            console.log(pollData)
+
           }
         </div>
       </div>
@@ -89,4 +88,4 @@ const OpinionPoll = (props: IPollProps) => {
   )
 }
 
-export default OpinionPoll
+export default Opinionpoll

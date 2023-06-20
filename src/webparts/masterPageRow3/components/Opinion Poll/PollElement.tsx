@@ -5,15 +5,15 @@ import 'react-leaf-polls/dist/index.css'
 import { getSP } from '../../pnpConfig'
 import { IItemAddResult } from '@pnp/sp/items'
 import "@pnp/sp/site-users/web";
-
+import './PollElement.scss'
 
 const PollElement = (props: any) => {
   let rowId = props.data.ID;
-  let q = props.data.QuestionName
-  let c = props.data.Choices;
+  const q = props.data.QuestionName
+  const c = props.data.Choices;
   let qid = String(props.data.QuestionId);
-  let choicearr = JSON.parse(c)
-  console.log(choicearr)
+  
+  const choicearr = JSON.parse(c)
 
   const [isLoading, setLoading] = React.useState(true);
   const [userVoted, setUservoted] = React.useState<boolean>(true)
@@ -24,7 +24,7 @@ const PollElement = (props: any) => {
     textColor: 'black',
     mainColor: '#00B87B',
     backgroundColor: 'rgb(255,255,255)',
-    alignment: 'center'
+    alignment: 'left'
   }
 
   const checkUser = async () => {
@@ -33,13 +33,8 @@ const PollElement = (props: any) => {
     let user = await _sp.web.currentUser();
     const list = await _sp.web.lists.getByTitle("pollItems").items.select()();
     list.map((x) => {
-      console.log(x.Email);
       userarrr.push(x.Email, String(x.qid))
     })
-
-    console.log(userarrr);
-
-    console.log(user.Email);
 
     console.log(userarrr.includes(user.Email));
     let cond = (userarrr.includes(user.Email) && userarrr.includes(qid))
@@ -74,8 +69,6 @@ const PollElement = (props: any) => {
 
 
   function vote(item: Result, results: Result[]) {
-    console.log(results);
-    console.log(item);
     updateVotes(item, results)
   }
 
@@ -86,7 +79,7 @@ const PollElement = (props: any) => {
     return <div>Loading...</div>;
   }
   return (
-
+<div className='PoleClass'>
     <LeafPoll
       type='multiple'
       question={q}
@@ -95,7 +88,7 @@ const PollElement = (props: any) => {
       onVote={vote}
       isVoted={userVoted}
     />
-
+</div>
   )
 }
 

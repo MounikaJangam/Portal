@@ -38,7 +38,7 @@
     "scriptResources": {
       "master-page-row-2-web-part": {
         "type": "path",
-        "path": "master-page-row-2-web-part_e3d21d59f34f89c22cb2.js"
+        "path": "master-page-row-2-web-part.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
@@ -47,12 +47,7 @@
       },
       "MasterPageRow2WebPartStrings": {
         "type": "path",
-        "path": "MasterPageRow2WebPartStrings_en-us_e8a849b581bbcb862b8824f17050cd4f.js"
-      },
-      "@microsoft/sp-core-library": {
-        "type": "component",
-        "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b",
-        "version": "1.16.1"
+        "path": "MasterPageRow2WebPartStrings_en-us.js"
       },
       "@microsoft/sp-webpart-base": {
         "type": "component",

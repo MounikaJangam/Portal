@@ -9,19 +9,15 @@ interface IBirthdaysPerMonthProps {
 }
 
 const Birthday = (props: IBirthdaysPerMonthProps) => {
-  console.log(props.data)
-  props.data && props.data?.map((month: any, index: number) =>{
-    console.log(month.title,month)
+  props.data && props.data?.map((month: any, index: number) => {
+    console.log(month.title, month)
   })
 
   return (
 
     <section>
       {props.data && props.data?.map((month: any, index: number) => (
-        
-
         <MonthSection key={month.title} data={month} index={index} />
-
       ))}
     </section>
   )

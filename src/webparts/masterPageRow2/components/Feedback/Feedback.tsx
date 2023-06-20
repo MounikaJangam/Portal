@@ -29,7 +29,6 @@ const Feedback = (props: any) => {
     })
   }
 
-  console.log(fb);
 
   return (
     <div className='rowMains'>

@@ -12,12 +12,11 @@ interface IMonthSectionProps {
 const MonthSection = (props: IMonthSectionProps): JSX.Element => {
   return (
     <>
-      <div className="rowMain">
-        <div className="row2">
+      <div className="inCard bg-gradient-2">
+        <div className="inCard--header">
           <h2>Birthdays</h2>
         </div>
         <div className={props.data.users.length===0?"row4NoBday":"row4"}>
-         {console.log(props.data.users)}
           
         <Carousel slide={false}>
           {props.data.users.length === 0 && (
@@ -68,6 +67,7 @@ const MonthSection = (props: IMonthSectionProps): JSX.Element => {
             );
           })}
         </Carousel>
+        <button className='footerButton'>View All</button>
       </div>
       </div>
     </>

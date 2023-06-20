@@ -10,8 +10,8 @@
 
 .rowMains {
    flex-grow: 1;
-   box-shadow:  0 0 10px  rgba(0,0,0,0.6);
-   -webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+   // box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+   // -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
    transition: .3s;
    overflow: hidden;
    float: right;
@@ -32,9 +32,8 @@
 }
 
 .row2container__part1 {
-   // box-shadow: 4px 4px 1px 0px rgba(0,0,0,.2);
-   box-shadow:  0 0 10px  rgba(0,0,0,0.6);
-   -webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+   // box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+   // -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
    transition: 0.3s;
    width: 66.7%;
    height: 265px;
@@ -53,19 +52,19 @@
       display: flex;
       width: 33%;
       flex-direction: column;
-      
+
       &_quicklinks{
          display: grid;
-         grid-template-columns: 33.3% 33.3% 33.3% ;
-         row-gap: 4px;
          margin: 1px 0px 3px 0px;
          float: right;
          color: #000;
+         grid-template-columns: 33% 33% 33%;
+         row-gap: 9px;
+         column-gap: 6px;
       }
-
       &__item {
-         box-shadow:  0 0 5px  rgba(0,0,0,0.6);
-         -webkit-box-shadow: 0 0 5px  rgba(0,0,0,0.6);
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+         -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
          background-color: #F0F8FF;
          margin: 1px;
          border: 1px solid #F0F8FF;

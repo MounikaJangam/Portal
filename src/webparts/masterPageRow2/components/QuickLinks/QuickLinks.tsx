@@ -5,12 +5,11 @@ import './QuickLinks.scss'
 const QuickLinks = (props: any) => {
   let arr: any[] = []
   arr = props.data
-  console.log(arr)
   return (
     <>
       {arr?.map((x) => {
         return (<div className="row2container__part2__item">
-          <div className="linkBody" onClick={()=>window.open(x.Url,"_blank")}>
+          <div className="linkBody" onClick={() => window.open(x.Url, "_blank")}>
             <div className="linkIcon"><img src={x.Icon} /></div>
             <div className="linkTitle">{x.Title}</div>
           </div>

@@ -8,8 +8,8 @@ import OpinionPoll from './Opinion Poll'
 const MasterPageRow3 = (props:IMasterPageRow3Props) => {
   return (
     <div className="Containers3" >
-    <div><Trainings description={props.description} isDarkTheme={props.isDarkTheme} environmentMessage={props.environmentMessage} hasTeamsContext={props.hasTeamsContext} userDisplayName={props.userDisplayName} context={props.context} ListName={props.ListName}/></div>
-     <div><Tasks/></div> 
+    <div><Trainings description={props.description} isDarkTheme={props.isDarkTheme} environmentMessage={props.environmentMessage} hasTeamsContext={props.hasTeamsContext} userDisplayName={props.userDisplayName} context={props.context} ListName={props.ListName}/></div> 
+    <div><Tasks/></div> 
     <div><OpinionPoll description={props.description} isDarkTheme={props.isDarkTheme} environmentMessage={props.environmentMessage} hasTeamsContext={props.hasTeamsContext} userDisplayName={props.userDisplayName} context={props.context} ListName={props.ListName}/></div> 
 
     </div>

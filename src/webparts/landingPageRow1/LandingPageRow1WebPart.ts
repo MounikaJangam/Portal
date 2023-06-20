@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+// import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
@@ -36,8 +36,22 @@ export default class LandingPageRow1WebPart extends BaseClientSideWebPart<ILandi
 
     ReactDom.render(element, this.domElement);
   }
+  protected async onInit(): Promise<void> {
+    
+    await super.onInit();
 
-  protected onInit(): Promise<void> {
+    const navterm = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+    { 
+      console.log(navterm)}
+
+    const navState={url:navterm};
+   history.pushState(navState,null,navterm);
+   
+  //  const newPopState=new PopStateEvent("popstate",{state:navState});
+  //   window.dispatchEvent(newPopState);
+    window.addEventListener('popstate', function (e) {
+      state:navState;
+    });
     return this._getEnvironmentMessage().then(message => {
        this._environmentMessage = message;
     });
@@ -93,9 +107,9 @@ export default class LandingPageRow1WebPart extends BaseClientSideWebPart<ILandi
     ReactDom.unmountComponentAtNode(this.domElement);
   }
 
-  protected get dataVersion(): Version {
-    return Version.parse('1.0');
-  }
+  // protected get dataVersion(): Version {
+  //   return Version.parse('1.0');
+  // }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {

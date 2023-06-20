@@ -17,19 +17,17 @@ const Trainings = (props: IMasterPageRow3Props) => {
     try {
 
       await sp.web.lists.getByTitle(props.ListName).items.get().then((view) => {
-        console.log(view);
+       
 
         view.map((y: any) => { Object.keys(y).filter(x => x !== "odata.type" && x !== "odata.id" && x !== "odata.etag" && x !== "odata.editLink" && x !== "FileSystemObjectType" && x !== "ServerRedirectedEmbedUri" && x !== "ServerRedirectedEmbedUrl" && x !== "ContentTypeId" && x !== "ComplianceAssetId" && x !== "OData__ColorTag" && x !== "Modified" && x !== "Created" && x !== "AuthorId" && x !== "EditorId" && x !== "OData__UIVersionString" && x !== "Attachments" && x !== "GUID" && x !== "Id" && x !=="Title").map((x: any) => { console.log(x); columnArr.push(x) }) })
 
         view.map((x: any,i:number) => {
          
           filteredobj = Object.assign({}, ...columnArr.map(key => ({ [key]: x[key] })))
-          console.log(filteredobj);
+          
           filteredarr.push(filteredobj)
           
         })
-        console.log(filteredobj);
-        console.log(filteredarr);
         
         setRowData(filteredarr)
         
@@ -46,7 +44,6 @@ const Trainings = (props: IMasterPageRow3Props) => {
         })}
        
         catch(error){
-        console.log(error)
 
         }
         setFinal(_columns)
@@ -55,7 +52,6 @@ const Trainings = (props: IMasterPageRow3Props) => {
 
 }
     catch (error) {
-      console.log(error);
     }
 
 }

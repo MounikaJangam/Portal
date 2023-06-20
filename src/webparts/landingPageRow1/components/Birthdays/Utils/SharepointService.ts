@@ -17,16 +17,13 @@ export class SharePointService {
       .getByTitle("Birthdays")
       .items.expand("Employee")
       .select("ID,Month,Date,BirthdayDate,Employee/Title,Employee/UserName")();
-      console.log(items)
     return this.ProcessData(items);
   }
   private GenerateCurrentMonths(): Array<BirthdaysMonth> {
     const months: Array<BirthdaysMonth> = [];
     //for current month
     const today = new Date();
-    console.log(today.getMonth())
     today.setMonth(today.getMonth());
-    console.log(today.getDate())
     const todayDate = today.getDate();
     console.log(todayDate);
     months.push({
@@ -71,9 +68,7 @@ export class SharePointService {
   // eslint-disable-next-line
   private ProcessData(items: any): Array<BirthdaysMonth> {
     const months = this.GenerateCurrentMonths();
-    console.log(months);
     for (let i = 0; i < months.length; i++) {
-      // const month = months[i];
       months[i].users = sortBy(
         items   // eslint-disable-next-line
         .filter((item: any) =>
@@ -96,7 +91,6 @@ export class SharePointService {
         "Date"
       );
     }
-    console.log(months, 'hello');
     return months;
   }
 }

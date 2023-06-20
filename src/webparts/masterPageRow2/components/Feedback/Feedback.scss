@@ -6,7 +6,7 @@ textarea {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   outline: none;
-  padding:3px;
+  padding: 3px;
   overflow-y: hidden;
 }
 
@@ -16,7 +16,7 @@ textarea {
 
 .formDiv {
   position: relative;
-  background-image: url("https://zelarsoft1.sharepoint.com/sites/Zelardemo/SiteAssets/KaiZan-bg.png");
+  // background-image: url("https://zelarsoft1.sharepoint.com/sites/Zelardemo/SiteAssets/KaiZan-bg.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
@@ -61,4 +61,13 @@ textarea {
 
 .btnDivShow {
   display: block;
+}
+
+.rowMains{
+  height: 50px;
+  margin:10px 0px 0px 0px;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  width: 410px;
+  box-shadow: none;
 }

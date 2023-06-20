@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@coreui/react": "^4.6.0",
-    "@microsoft/sp-core-library": "1.16.1",
+    "@microsoft/sp-core-library": "^1.17.3",
     "@microsoft/sp-lodash-subset": "1.16.1",
     "@microsoft/sp-office-ui-fabric-core": "1.16.1",
     "@microsoft/sp-property-pane": "1.16.1",
@@ -36,6 +36,7 @@
     "react-image-parser": "^2.0.2",
     "react-leaf-polls": "^1.1.6",
     "react-slideshow-image": "^4.2.1",
+    "reactjs-popup": "^2.0.5",
     "sp-pnp-js": "^3.0.10",
     "tslib": "2.3.1"
   },

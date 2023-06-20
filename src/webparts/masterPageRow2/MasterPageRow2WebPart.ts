@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+// import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
@@ -38,7 +38,26 @@ export default class MasterPageRow2WebPart extends BaseClientSideWebPart<IMaster
     ReactDom.render(element, this.domElement);
   }
 
-  protected onInit(): Promise<void> {
+  protected async onInit(): Promise<void> {
+    // this.render();
+    
+    // await super.onInit();
+
+    // const navterm = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
+
+    // ((history) => {
+    //   var pushState = history.pushState;
+    //   history.pushState = (state, key, path) => {
+    //       pushState.apply(history, [state, key, path]);
+    //       // this._onUrlChange();
+    //   };
+    // })(window.history);
+
+    // window.addEventListener('popstate', function (e) {
+    //   // Currently browsing by the browser history buttons ( back / forward )
+    //   // doesn't cause any effect on a sp conditionally loaded page.
+    //   // this._onUrlChange();
+    // });
     return this._getEnvironmentMessage().then(message => {
       // this._environmentMessage = message;
     });
@@ -94,9 +113,9 @@ export default class MasterPageRow2WebPart extends BaseClientSideWebPart<IMaster
     ReactDom.unmountComponentAtNode(this.domElement);
   }
 
-  protected get dataVersion(): Version {
-    return Version.parse('1.0');
-  }
+  // protected get dataVersion(): Version {
+  //   return Version.parse('1.0');
+  // }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {

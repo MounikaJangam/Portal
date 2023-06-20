@@ -53,7 +53,6 @@ const PollForm = (props: any) => {
 
   React.useEffect(() => {
     renderChoice();
-    console.log(question, choiceobj);
     getLatestID();
 
   }, [choiceobj])
@@ -61,7 +60,6 @@ const PollForm = (props: any) => {
   React.useEffect(() => {
     getLatestID()
   }, [])
-  console.log(Nextid);
 
   return (
 
