@@ -14,6 +14,7 @@ import { ILandingPageRow1Props } from './components/LandingPage/ILandingPageRow1
 
 export interface ILandingPageRow1WebPartProps {
   description: string;
+  ListName: string;
 }
 
 export default class LandingPageRow1WebPart extends BaseClientSideWebPart<ILandingPageRow1WebPartProps> {
@@ -30,7 +31,8 @@ export default class LandingPageRow1WebPart extends BaseClientSideWebPart<ILandi
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
-        context:this.context
+        context:this.context,
+        ListName: this.properties.ListName,
       }
     );
 

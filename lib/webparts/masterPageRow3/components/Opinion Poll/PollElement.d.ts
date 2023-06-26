@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import 'react-leaf-polls/dist/index.css';
 import "@pnp/sp/site-users/web";
 import './PollElement.scss';

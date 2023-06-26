@@ -1,15 +1,18 @@
 import * as React from 'react'
 import './Feedback.scss'
-import { IoMdSend } from "react-icons/io";
+// import { IoMdSend } from "react-icons/io";
 import { getSP } from '../pnpConfig';
 import { SPFI } from '@pnp/sp';
 import "@pnp/sp/sputilities";
 import { SlCheck } from "react-icons/sl";
 import { IItemAddResult } from "@pnp/sp/items";
+// import { AiFillCloseCircle} from "react-icons/ai";
+import { BsFillArrowRightSquareFill} from "react-icons/bs";
 
 const Feedback = (props: any) => {
 
   const [fb, setFb] = React.useState<any>("")
+  // const [data,setData] = React.useState<any>("")
   const [msg, setMsg] = React.useState<any>(false)
   const postFeedback = async () => {
     let _sp: SPFI = getSP(props.context);
@@ -29,21 +32,30 @@ const Feedback = (props: any) => {
     })
   }
 
+  React.useEffect(() => {
+    console.log(fb)
+  },[fb])
+
 
   return (
+  
     <div className='rowMains'>
-      <div className="feedbackTitle">
-      </div>
-      <div className='formDiv'>
-        <div className="field"><textarea value={fb} placeholder='Enter your Feedback here' onChange={(e) => setFb(e.target.value)}></textarea></div>
-        <div className='submitBtn'><div className={msg ? 'msgopen' : 'msgclose'}> <SlCheck size={15} color={"green"} />   <div className="successm">      Successfully submitted</div></div><div className={fb == "" ? "btnDivHide" : "btnDivShow"}><button onClick={() => {
-          postFeedback(); setFb(""); setMsg(true); setTimeout(() => {
-            setMsg(false)
-          }, 2000)
-        }}><IoMdSend /></button></div></div>
-      </div>
+    <div className="feedbackTitle">
     </div>
+    <div className='formDiv'>
+      <div className="field"><textarea value={fb} placeholder='Enter your Feedback here' onChange={(e) => setFb(e.target.value)}></textarea>
+      <div className='submitBtn'><div className={msg ? 'msgopen' : 'msgclose'}> <SlCheck size={15} color={"green"} />   <div className="successm"> Successfully submitted</div></div><div className={fb == "" ? "btnDivHide" : "btnDivShow"}>
+        <div onClick={() => {
+        postFeedback(); setFb(""); setMsg(true); setTimeout(() => {
+          setMsg(false)
+        }, 2000)
+      }}><BsFillArrowRightSquareFill size={15} /></div></div></div>
+    </div>
+    </div>
+  </div>
+   
   )
+  
 }
 
 export default Feedback

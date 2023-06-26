@@ -3,6 +3,7 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 export interface ILandingPageRow1WebPartProps {
     description: string;
+    ListName: string;
 }
 export default class LandingPageRow1WebPart extends BaseClientSideWebPart<ILandingPageRow1WebPartProps> {
     private _isDarkTheme;

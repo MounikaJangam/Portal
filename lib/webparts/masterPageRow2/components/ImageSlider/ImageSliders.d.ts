@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import "../MasterPageRow2.scss";
 import "./ImageSlider.scss";
 import 'react-slideshow-image/dist/styles.css';

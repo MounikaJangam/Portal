@@ -7,4 +7,5 @@ export interface ILandingPageRow1Props {
   hasTeamsContext: boolean;
   userDisplayName: string;
   context:WebPartContext;
+  ListName: string
 }

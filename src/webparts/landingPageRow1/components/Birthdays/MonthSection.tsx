@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Persona, PersonaSize } from "@fluentui/react/lib/Persona";
 import { BirthdaysMonth } from "./models/BirthdayMonths";
-import Carousel from "react-bootstrap/Carousel";
+// import Carousel from "react-bootstrap/Carousel";
 import '../LandingPage/Landing.scss'
 
 interface IMonthSectionProps {
@@ -13,39 +13,40 @@ const MonthSection = (props: IMonthSectionProps): JSX.Element => {
   return (
     <>
       <div className="inCard bg-gradient-2">
-        <div className="inCard--header">
-          <h2>Birthdays</h2>
+        <div className='inCard--header'>
+          <p className='inCard--header one'>Today's</p>
+          <p className='inCard--header two'><b>Birthdays</b></p>
         </div>
+        <div className="row4 inCard--body">
+        <ul className='bullets round'>
+
         <div className={props.data.users.length===0?"row4NoBday":"row4"}>
-          
-        <Carousel slide={false}>
-          {props.data.users.length === 0 && (
+         {console.log(props.data.users)}
+        {/* <div className="row4NoBday"> */}
+        {props.data.users.length === 0 && (
             <div className="birthday">
-              <Persona
+              {/* <Persona
                 primaryText="Next birthday will"
                 secondaryText="be celebrated soon!"
                 size={PersonaSize.size56}
                 styles={{
                   primaryText: {
-                    color: "black",
+                    color: "white",
                   },
                   secondaryText: {
-                    color: "black",
+                    color: "white",
                   },
                 }}
-              />
+              /> */}
+              <p className="birthday--sub1">Next Birthday...</p>
+              <p className="birthday--sub2">Will be celebrated soon!</p>
             </div>
           )}
-          {props.data.users.map((user) => {
-            return (
-              <Carousel.Item key={user.id}>
-                <Carousel.Caption>
-                  <div style={{ alignItems: "center" }}>
-                    <br />
-                    <br />
-                  </div>
-                </Carousel.Caption>
-                <div className="birthday">
+          {/* </div> */}
+
+            {props.data.users.map((user) => {
+              return (
+                <li>
                   <Persona
                     primaryText="Happy birthday!"
                     secondaryText={user.name}
@@ -59,16 +60,19 @@ const MonthSection = (props: IMonthSectionProps): JSX.Element => {
                       secondaryText: {
                         color: "white",
                       },
-                      
+
                     }}
                   />
-                </div>
-              </Carousel.Item>
-            );
-          })}
-        </Carousel>
-        <button className='footerButton'>View All</button>
-      </div>
+                </li>
+              );
+            })}
+            </div>
+          </ul>
+        </div>
+{/*         
+        <div className='inCard--footer' >
+          <button className='Footer-Button2'  onClick={() => window.location.href="https://zelarsoft1.sharepoint.com/sites/Zelardemo/Lists/Announcements/AllItems.aspx"}>View ...</button>
+        </div> */}
       </div>
     </>
   );

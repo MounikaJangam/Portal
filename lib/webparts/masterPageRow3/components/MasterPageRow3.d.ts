@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import './MasterPageRow3.scss';
 import { IMasterPageRow3Props } from './IMasterPageRow3Props';
 declare const MasterPageRow3: (props: IMasterPageRow3Props) => JSX.Element;

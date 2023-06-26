@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { IPollProps } from './IPollProps';
 import "@pnp/sp/site-users/web";
 import './Poll.scss';

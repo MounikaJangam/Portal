@@ -1,13 +1,11 @@
 textarea {
-  margin: 6px;
+  margin: 5px;
   resize: none;
-  height: 106px;
+  height: 75px;
   width: 98%;
   background-color: rgba(255, 255, 255, 0);
   border: none;
   outline: none;
-  padding: 3px;
-  overflow-y: hidden;
 }
 
 .feedbackTitle {
@@ -16,7 +14,7 @@ textarea {
 
 .formDiv {
   position: relative;
-  // background-image: url("https://zelarsoft1.sharepoint.com/sites/Zelardemo/SiteAssets/KaiZan-bg.png");
+  background-image: url("https://zelarsoft1.sharepoint.com/sites/Zelardemo/SiteAssets/KaiZan-bg.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,9 +29,7 @@ textarea {
 
 .submitBtn button {
   background-color: #5891bb;
-  padding: 3px;
-  height: 18px;
-  margin: 9px;
+  padding: 7px;
   border: none;
   cursor: pointer;
   border-radius: 2px;
@@ -61,13 +57,4 @@ textarea {
 
 .btnDivShow {
   display: block;
-}
-
-.rowMains{
-  height: 50px;
-  margin:10px 0px 0px 0px;
-  border-radius: 16px;
-  background-color: #FFFFFF;
-  width: 410px;
-  box-shadow: none;
 }

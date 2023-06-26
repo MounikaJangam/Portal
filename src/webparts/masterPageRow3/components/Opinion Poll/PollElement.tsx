@@ -22,9 +22,9 @@ const PollElement = (props: any) => {
   // Object keys may vary on the poll type (see the 'Theme options' table below)
   const customTheme = {
     textColor: 'black',
-    mainColor: '#00B87B',
-    backgroundColor: 'rgb(255,255,255)',
-    alignment: 'left'
+    // mainColor: '#00B87B',
+    // backgroundColor: 'rgb(255,255,255)',
+    // alignment: 'left'
   }
 
   const checkUser = async () => {

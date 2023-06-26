@@ -6,5 +6,6 @@ export interface ILandingPageRow1Props {
     hasTeamsContext: boolean;
     userDisplayName: string;
     context: WebPartContext;
+    ListName: string;
 }
 //# sourceMappingURL=ILandingPageRow1Props.d.ts.map

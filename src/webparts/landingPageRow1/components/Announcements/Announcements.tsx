@@ -4,20 +4,23 @@ const Announcements = (props: any) => {
     return (
         <div className='inCard bg-gradient-1'>
             <div className='inCard--header'>
-                <h2>Announcements</h2>
+                <p className='inCard--header one'>New</p>
+                <p className='inCard--header two'><b>Announcements-</b></p>
+                <p className='inCard--header three'>June - 2023</p>
             </div>
-            {/* <Marquee speed={10} direction='up' className='marquee tag'> */}
-            <div className='row1'>
-                {props.data?.map((x: any) => {
-                    return (
-                        <ul className='bullets round'>
+
+            <div className='row1 inCard--body'>
+                <ul className='bullets round'>
+                    {props.data?.map((x: any) => {
+                        return (
                             <li>{x.Title}</li>
-                        </ul>
-                    )
-                })}
-                <button className='footerButton'>Read more</button>
+                        )
+                    })}
+                </ul>
             </div>
-            {/* </Marquee> */}
+            <div className='inCard--footer' >
+                <button className='Footer-Button1' onClick={() => window.location.href="https://zelarsoft1.sharepoint.com/sites/Zelardemo/Lists/Announcements/AllItems.aspx"}>View All</button>
+            </div>
         </div>
     )
 }

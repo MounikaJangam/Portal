@@ -56,32 +56,31 @@ const Opinionpoll = (props: IPollProps) => {
 
   return (
     <>
-      <div className='rowMain3'>
-        <div className='row31'>
-          <h2>Opinion Poll</h2>
+      <div className='inCard1 bg-gradient-one'>
+        <div className='inCard1--header'>
+        <p className='inCard1--header one'>Today's</p>
+        <p className='inCard1--header two'><b>Opinion Poll</b></p>
         </div>
-        <div className='row32'>
+        <div className='row32 inCard--body'>
           {/* {canCreate&&
      <AiFillPlusCircle className={createformmode?"formBtnOpened":"formBtn"} onClick={()=>setCreateformmode(!createformmode)} size={40}/>
    } */}
           {createformmode && <PollForm context={props.context} />}
           
           {
-            pollData && pollData?.map((x: any) => {
-              
-                
+            pollData && pollData?.map((x: any) => {    
               return (
-                
                 <PollElement data={x} context={props.context} />
-
               )
             })
           }
-
           {
 
           }
         </div>
+        <div className='inCard1--Footer1' >
+                <button className='Footer1-Button-One'>View All</button>
+                </div>
       </div>
     </>
 

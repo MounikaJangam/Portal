@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { BirthdaysMonth } from "./models/BirthdayMonths";
 import '../LandingPage/Landing.scss';
 interface IMonthSectionProps {

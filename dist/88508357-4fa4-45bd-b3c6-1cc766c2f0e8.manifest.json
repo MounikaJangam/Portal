@@ -38,7 +38,7 @@
     "scriptResources": {
       "master-page-row-2-web-part": {
         "type": "path",
-        "path": "master-page-row-2-web-part.js"
+        "path": "master-page-row-2-web-part_c44099bd12de7bea0f50.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
@@ -47,7 +47,7 @@
       },
       "MasterPageRow2WebPartStrings": {
         "type": "path",
-        "path": "MasterPageRow2WebPartStrings_en-us.js"
+        "path": "MasterPageRow2WebPartStrings_en-us_e8a849b581bbcb862b8824f17050cd4f.js"
       },
       "@microsoft/sp-webpart-base": {
         "type": "component",

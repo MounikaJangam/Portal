@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp";

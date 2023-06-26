@@ -34,7 +34,7 @@ const MasterPageRow2 = (props: IMasterPageRow2Props) => {
 
 
 
-  const getUserData = async () => {2
+  const getUserData = async () => {
     let _sp: SPFI = getSP(props.context);
     
     const list = await _sp.web.lists.getByTitle("EmployeeDetails");
