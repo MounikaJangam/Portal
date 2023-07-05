@@ -1,18 +1,15 @@
 import * as React from 'react'
 import './Feedback.scss'
-// import { IoMdSend } from "react-icons/io";
 import { getSP } from '../pnpConfig';
 import { SPFI } from '@pnp/sp';
 import "@pnp/sp/sputilities";
 import { SlCheck } from "react-icons/sl";
 import { IItemAddResult } from "@pnp/sp/items";
-// import { AiFillCloseCircle} from "react-icons/ai";
 import { BsFillArrowRightSquareFill} from "react-icons/bs";
 
 const Feedback = (props: any) => {
 
   const [fb, setFb] = React.useState<any>("")
-  // const [data,setData] = React.useState<any>("")
   const [msg, setMsg] = React.useState<any>(false)
   const postFeedback = async () => {
     let _sp: SPFI = getSP(props.context);

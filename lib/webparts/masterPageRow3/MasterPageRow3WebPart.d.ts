@@ -3,7 +3,6 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 export interface IMasterPageRow3WebPartProps {
     description: string;
-    ListName: string;
 }
 export default class MasterPageRow3WebPart extends BaseClientSideWebPart<IMasterPageRow3WebPartProps> {
     private _isDarkTheme;

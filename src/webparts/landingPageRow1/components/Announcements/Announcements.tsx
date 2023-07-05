@@ -1,5 +1,6 @@
 import * as React from 'react'
 import "../LandingPage/Landing.scss"
+
 const Announcements = (props: any) => {
     return (
         <div className='inCard bg-gradient-1'>
@@ -11,14 +12,15 @@ const Announcements = (props: any) => {
 
             <div className='row1 inCard--body'>
                 <ul className='bullets round'>
-                    {props.data?.map((x: any) => {
+                    {props.data?.map((x: any,i:number) => {
                         return (
+                            i<3 &&
                             <li>{x.Title}</li>
                         )
                     })}
                 </ul>
             </div>
-            <div className='inCard--footer' >
+            <div className={props.data?.length>3?'inCard--footer':'inCard--nofooter'} >
                 <button className='Footer-Button1' onClick={() => window.location.href="https://zelarsoft1.sharepoint.com/sites/Zelardemo/Lists/Announcements/AllItems.aspx"}>View All</button>
             </div>
         </div>

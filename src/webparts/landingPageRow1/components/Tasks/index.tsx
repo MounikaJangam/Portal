@@ -1,16 +1,3 @@
-// import * as React from 'react'
-
-// const Tasks = () => {
-
-// return (
-//     <div className='rowMain3'>
-//     <div className='row31'>
-//         <h2>Tasks</h2>
-//     </div>
-//     </div>
-//   )
-// }
-
 import * as React from 'react'
 import "../LandingPage/Landing.scss"
 import {FiEye } from "react-icons/fi";
@@ -25,7 +12,7 @@ const Tasks = (props: any) => {
             </div>
         <div className='row1 inCard--body'>
           <ul className='bullents round'>
-            {props.data?.map((x:any)=>{
+            {props.data?.map((x:any,i:number)=>{
               const timestamp = x.DueDate;
               const dateTime = new Date(timestamp);
               // Extracting the time
@@ -45,6 +32,7 @@ const Tasks = (props: any) => {
              
               
                    return(
+                    i<3 &&
                    <li>
                     <div className='inCard-list'>
                     <div className='inCard-list--icon'><MdArrowForwardIos size={"30px"}/></div>
@@ -52,14 +40,14 @@ const Tasks = (props: any) => {
                     <h3>{x.Title}</h3>
                     <p>{date} {time}</p>
                     </div>
-                    <a href={`https://zelarsoft1.sharepoint.com/sites/Zelardemo/learningmanagement/Lists/Tasks/DispForm.aspx?ID=${x.ID}`} target='_blank'><FiEye/></a>
+                    <a href={`https://zelarsoft1.sharepoint.com/sites/Zelardemo/learningmanagement/Lists/Tasks/DispForm.aspx?ID=${x.ID}`} target='_blank'><FiEye size={"25px"} color='white'/></a>
                     </div>
                     </li>
                    )
             })}
             </ul>
         </div>
-        <div className='inCard--footer' >
+        <div className={props.data?.length>3?'inCard--footer':'inCard--nofooter'}>
           <button className='Footer-Button4'  onClick={() => window.location.href="https://zelarsoft1.sharepoint.com/sites/Zelardemo/learningmanagement/Lists/Tasks/AllItems.aspx"}>View All</button>
         </div>
     </div>

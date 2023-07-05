@@ -33,7 +33,7 @@ const MasterPageRow3 = (props: IMasterPageRow3Props) => {
     <div className="mainContainer" >
       <div className='Containers3'>
       <div className='opinionpoll'>
-        <OpinionPoll description={props.description} isDarkTheme={props.isDarkTheme} environmentMessage={props.environmentMessage} hasTeamsContext={props.hasTeamsContext} userDisplayName={props.userDisplayName} context={props.context} ListName={props.ListName} />
+        <OpinionPoll description={props.description} isDarkTheme={props.isDarkTheme} environmentMessage={props.environmentMessage} hasTeamsContext={props.hasTeamsContext} userDisplayName={props.userDisplayName} context={props.context} />
         </div>
       <div>
         <News data={newsdata} />

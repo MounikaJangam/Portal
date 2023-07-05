@@ -14,7 +14,7 @@ import { IMasterPageRow3Props } from './components/IMasterPageRow3Props';
 
 export interface IMasterPageRow3WebPartProps {
   description: string;
-  ListName: string;
+  // ListName: string;
 }
 
 export default class MasterPageRow3WebPart extends BaseClientSideWebPart<IMasterPageRow3WebPartProps> {
@@ -32,7 +32,7 @@ export default class MasterPageRow3WebPart extends BaseClientSideWebPart<IMaster
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
         context: this.context,
-        ListName: this.properties.ListName,
+        // ListName: this.properties.ListName,
       }
     );
 

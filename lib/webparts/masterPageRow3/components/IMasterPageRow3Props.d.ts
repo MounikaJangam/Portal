@@ -6,6 +6,5 @@ export interface IMasterPageRow3Props {
     hasTeamsContext: boolean;
     userDisplayName: string;
     context: WebPartContext;
-    ListName: string;
 }
 //# sourceMappingURL=IMasterPageRow3Props.d.ts.map

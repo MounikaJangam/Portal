@@ -6,6 +6,5 @@ export interface IPollProps {
     hasTeamsContext: boolean;
     userDisplayName: string;
     context: WebPartContext;
-    ListName: string;
 }
 //# sourceMappingURL=IPollProps.d.ts.map

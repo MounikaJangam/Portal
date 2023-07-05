@@ -6,7 +6,6 @@ export interface IPollProps {
   hasTeamsContext: boolean;
   userDisplayName: string;
   context:WebPartContext;
-  ListName:string
 }
 
 

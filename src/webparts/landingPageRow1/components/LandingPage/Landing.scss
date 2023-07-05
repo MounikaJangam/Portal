@@ -38,7 +38,6 @@
   &--sub2{
     color: white;
     font-size: 14px;
-    // background: url("C:/Users/Dell/Downloads/ezgif-1-6781878aa7-unscreen.gif");
   }
 }
 
@@ -70,8 +69,12 @@
 }
 
 .row4 {
-  width: 99%;
   height: 250px;
+  background: url("https://zelarsoft1.sharepoint.com/sites/Zelardemo/SiteAssets/BirthdaysVideo.gif");
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: -9px;
 }
 
 .row4NoBday {
@@ -145,6 +148,9 @@
       font-size: 18px; 
     }
   }
+  &--nofooter{
+    display: none;
+  }
 }
 
 
@@ -187,6 +193,9 @@
     color: #F0F3F8;
     background-color: #8A29EF;
     font-size: 15px;
+  }
+  &--nofooter{
+    display: none;
   }
 }
 

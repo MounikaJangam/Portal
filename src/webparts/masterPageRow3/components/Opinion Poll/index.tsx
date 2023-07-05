@@ -5,33 +5,15 @@ import { getSP } from '../../pnpConfig';
 import { ICamlQuery } from '@pnp/sp/lists';
 import { IPollProps } from './IPollProps';
 import "@pnp/sp/site-users/web";
-import PollForm from './PollForm';
 import './Poll.scss'
-import { PermissionKind } from "@pnp/sp/security";
 
 const Opinionpoll = (props: IPollProps) => {
   const [pollData, setPolldata] = React.useState<any>([])
-  const [, setFormmode] = React.useState<boolean>(true)
-  const [createformmode] = React.useState<boolean>(false);
-  const [, setcanCreate] = React.useState<boolean>(false)
+  const [formmode, setFormmode] = React.useState<boolean>(true)
   let arr: any[]
 
-  const caml: ICamlQuery = {
-    ViewXml: "<View><Query><FieldRef Name='ID' /><FieldRef Name='QuestionId' /><FieldRef Name='QuestionName' /><FieldRef Name='Choices' /><Where><Eq><FieldRef Name='Active'/><Value Type='Boolean'>1</Value></Eq></Where></Query></View>",
-  }
-
-
-  const checkPrem = async () => {
-    let _sp: SPFI = getSP(props.context)
-    const prems = await _sp.web.lists.getByTitle("OpinionPole").getCurrentUserEffectivePermissions()
-
-    if (_sp.web.hasPermissions(prems, PermissionKind.AddListItems) && _sp.web.hasPermissions(prems, PermissionKind.EditListItems)) {
-      setcanCreate(true)
-    }
-    else {
-      setcanCreate(false)
-    }
-
+  const caml:ICamlQuery={
+    ViewXml:"<View><Query><FieldRef Name='ID' /><FieldRef Name='Q.Id' /><FieldRef Name='Q.Name' /><FieldRef Name='Q.Choices' /><Where><Eq><FieldRef Name='Active'/><Value Type='Boolean'>1</Value></Eq></Where></Query></View>",
   }
   const getData = async () => {
     let _sp: SPFI = getSP(props.context);
@@ -40,6 +22,7 @@ const Opinionpoll = (props: IPollProps) => {
 
     arr = await r;
    
+    console.log(r);
 
     setPolldata(arr)
     if (arr.length > 0) { setFormmode(false) }
@@ -49,9 +32,6 @@ const Opinionpoll = (props: IPollProps) => {
 
   React.useEffect(() => {
     getData();
-    checkPrem();
-
-
   }, [])
 
   return (
@@ -62,11 +42,7 @@ const Opinionpoll = (props: IPollProps) => {
         <p className='inCard1--header two'><b>Opinion Poll</b></p>
         </div>
         <div className='row32 inCard--body'>
-          {/* {canCreate&&
-     <AiFillPlusCircle className={createformmode?"formBtnOpened":"formBtn"} onClick={()=>setCreateformmode(!createformmode)} size={40}/>
-   } */}
-          {createformmode && <PollForm context={props.context} />}
-          
+          {console.log(formmode)}
           {
             pollData && pollData?.map((x: any) => {    
               return (
@@ -75,12 +51,9 @@ const Opinionpoll = (props: IPollProps) => {
             })
           }
           {
-
+            console.log(pollData)
           }
         </div>
-        <div className='inCard1--Footer1' >
-                <button className='Footer1-Button-One'>View All</button>
-                </div>
       </div>
     </>
 

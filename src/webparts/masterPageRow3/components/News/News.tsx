@@ -1,7 +1,6 @@
 import * as React from 'react'
 import "../MasterPageRow3.scss"
 
-// import Marquee from "react-fast-marquee";
 const News = (props: any) => {
   return (
     <div className='inCard1 bg-gradient-two'>
@@ -12,14 +11,15 @@ const News = (props: any) => {
       
       <div className='row1 inCard1--body'>
       <ul className='bullets round1'>
-        {props.data?.map((x: any) => {
-          return (       
+        {props.data?.map((x: any,i:number) => {
+          return ( 
+            i<3 &&     
             <li>{x.Title}</li>  
           )
         })}
          </ul>
       </div>
-      <div className='inCard1--Footer1' >
+      <div className={props.data?.length>3?'inCard1--Footer1':'nofooter' }>
                 <button className='Footer1-Button-Two'  onClick={() => window.location.href="https://zelarsoft1.sharepoint.com/sites/Zelardemo/Lists/News1/AllItems.aspx"}>View All</button>
                 </div>
     </div>
